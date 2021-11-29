@@ -22,12 +22,12 @@ const tourSchema = mongoose.Schema(
       type: Number,
       required: [true, 'A tour must have a group size'],
     },
-    season: {
+    vehicle: {
       type: String,
-      required: [true, 'A tour must have a season'],
+      required: [true, 'A tour must have a vehicle'],
       enum: {
-        values: ['winter', 'spring', 'summer', 'autumn'],
-        message: 'Season is either: winter, spring, summer,autumn',
+        values: ['plane', 'cruise', 'coach'],
+        message: 'A tour must have a vehicle: plane, cruise, coach',
       },
     },
     ratingsAverage: {

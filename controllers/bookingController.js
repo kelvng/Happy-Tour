@@ -1,6 +1,6 @@
 const Tour = require('../models/tourModel');
 const catchAsync = require('./../utils/catchAsync');
-
+const factory = require('./handlerFactory');
 const Booking = require('../models/bookingModel');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
@@ -21,7 +21,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       {
         name: `${tour.name} Tour`,
         description: tour.summary,
-        images: [`https://www.natours.dev/img/tours/${tour.imageCover}`],
+        images: [`http://localhost:3000/img/tours/${tour.imageCover}`],
         amount: tour.price * 100,
         currency: 'usd',
         quantity: 1,
@@ -42,5 +42,13 @@ exports.createBookingCheckOut = catchAsync(async (req, res, next) => {
   if (!tour && !user && !price) return next();
   await Booking.create({ tour, user, price });
 
-  res.redirect(req.originalUrl.split('?')[0]);
+  // res.redirect(req.originalUrl.split('?')[0]);
+
+  res.redirect('/my-tours');
 });
+
+exports.createBooking = factory.createOne(Booking);
+exports.getBooking = factory.getOne(Booking);
+exports.getAllBookings = factory.getAll(Booking);
+exports.updateBooking = factory.updateOne(Booking);
+exports.deleteBooking = factory.deleteOne(Booking);

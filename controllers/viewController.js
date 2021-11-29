@@ -4,7 +4,8 @@ const Booking = require('../models/bookingModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const Email = require('./../utils/email');
-
+const Review = require('../models/reviewModel');
+const factory = require('./handlerFactory');
 exports.getOverview = catchAsync(async (req, res) => {
   // 1) get tour data
   const tours = await Tour.find();
@@ -50,7 +51,7 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
   const bookings = await Booking.find({ user: req.user.id });
 
-  // 2) Find tours with the returned IDs
+  // // 2) Find tours with the returned IDs
   const tourIDs = bookings.map((el) => el.tour);
   const tours = await Tour.find({ _id: { $in: tourIDs } });
 
@@ -97,4 +98,28 @@ exports.signup = catchAsync(async (req, res, next) => {
     console.log(url);
     await new Email(newUser, url).sendWelcome();
   }
+});
+
+// [GET] /create-reviews
+exports.getCreateReviewForm = catchAsync(async (req, res, next) => {
+  res.render('review', {
+    title: 'Create Review',
+    bookingId: req.params.bookingId,
+  });
+});
+
+exports.createReview = catchAsync(async (req, res, next) => {
+  const tour = await Tour.findById(req.params.bookingId);
+  if (!tour) {
+    return res.status(404).json({
+      message: 'Error, NOT FOUND',
+    });
+  }
+  await Review.create({
+    tour: req.params.bookingId,
+    user: req.user.id,
+    review: req.body.review,
+    rating: req.body.rating,
+  });
+  res.redirect('/my-tours');
 });
