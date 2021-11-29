@@ -1,0 +1,22 @@
+extends base
+
+block content
+  main.main
+    .card-container
+    
+      each booking in tours
+        .card
+          .card__header
+            .card__picture
+              .card__picture-overlay &nbsp;
+              img.card__picture-img(src=`/img/tours/${booking.imageCover}`, alt=`${booking.name}`)
+            h3.heading-tertirary
+              span= booking.name
+
+          .card__details
+            h4.card__sub-heading= `${booking.duration}-day tour | price: $${booking.price}`
+            p.card__text= booking.summary
+          
+          .card__footer
+            a.btn.btn--green.btn--small(href=`/tour/${booking.slug}`) Details
+            a.btn.btn--green.btn--small(href=`create/${booking.id}`) Review
