@@ -1,0 +1,60 @@
+\subsection{Security}
+
+\subsubsection{Compromised database}
+
+\begin{itemize}
+\item Mã hóa mật khẩu với salt và hash (bcrypt)
+\item Mã hóa password reset tokens (SHA 256)
+\end{itemize}
+
+\subsubsection{Brute force attacks}
+
+( Hacker có thể cố gắng đoán password bằng cách thử hàng triệu password ngẫu nhiên)
+
+\begin{itemize}
+\item Sử dụng bcrypt
+\item Triển khai rate limiting (express-rate-limit) – đặt giới hạn request cho 1 ID nhất định
+\item Triển khai maximum login attemps (đặt móc thời gian nếu user nhập sai 10 lần)
+\end{itemize}
+
+\subsubsection{Cross-site scripting (xss) attacks }
+( Nơi hacker cố gắng đưa các script độc vào web – có thể đọc local storage )
+
+\begin{itemize}
+\item Lưu JWT ở  HTTPOnly cookies
+( không nên lưu JWT ở local storage => nên lưu vào HTTP-cookie => trình duyệt nhận và gửi cookie nhưng cookie settings không thể truy cập và sửa đổi)
+\item Santitize user input data
+\item Set special HTTP headers (helmet package)
+\end{itemize}
+
+\subsubsection{Denial-of-service (dos) attack}
+
+Hacker gửi quá nhiều request khiến server bị break down
+
+\begin{itemize}
+\item Triển khai rate limiting (express-rate-limit)
+\item Limit body payload (in body-parser) => giới hạn dữ liệu được gửi lên server
+\end{itemize}
+
+\subsubsection{NOSQL query injection}
+
+\begin{itemize}
+\item Use Mongoose for MongoDB
+\item Santitize user input data
+\end{itemize}
+
+
+\subsubsection{Đề xuất các phương pháp khác}
+
+\begin{enumerate}
+\item Luôn luôn sử dụng HTTPs (nếu không hacker có thể vào ăn cắp JWT)
+\item Create random password reset tokens with expiry dates (hiệu quả)
+\item Từ chối  JWT cũ sau khi thay đổi passowrd
+\item Không gửi lỗi quá chi tiết cho user (dễ khai thác lỗ hỗng)
+\item Triển khai blacklist các JWT không đáng tin cậy
+\item Xác nhận qua email khi tạo tài khoản 
+\end{enumerate}
+
+
+
+

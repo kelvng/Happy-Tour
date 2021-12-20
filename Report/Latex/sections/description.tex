@@ -1,0 +1,884 @@
+\vspace{10cm}
+
+\subsubsection{Use case description}
+
+\addcontentsline{lot}{table}{USE-CASE DESCRIPTION}
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Quản lý xác thực người dùng.}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-1\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Là người dùng, tôi muốn đăng nhập vào ứng dụng để sử dụng dịch vụ từ ứng dụng.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng, Quản lý, Kế t Admin\end{tabular}  \\[0.3cm] \hline 
+    
+    
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+\begin{itemize}
+\item Tài khoản người dùng đã được tạo sẵn
+\item Tài khoản người dùng đã được phân quyền
+\item Thiết bị của người dùng đã được kết nối internet khi thực hiện đăng nhập
+\end{itemize}
+\end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Người dùng yêu cầu đăng nhập vào ứng dụng Happy-Tour\end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+\begin{itemize}
+\item Người dùng đăng nhập ứng dụng thành công
+\item Hệ thống ghi nhận hoạt động đăng nhập thành công
+\end{itemize}
+.\end{tabular} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{enumerate}
+        \item Người dung truy cập vào website.
+        \item Người dùng chọn nút login
+        \item Người dùng nhập tài khoản và chọn đăng nhập
+        \end{enumerate}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Hệ thống xác thực thông tin đăng nhập không thành.
+    \item     Người dùng chọn lệnh lấy lại mật khẩu
+    \end{itemize}
+
+    \end{tabular} \\[0.5cm] \hline
+    
+    \hline 
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    Mật khẩu của người dùng phải được hash bằng bcrypt
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Đăng nhập xác thực người dùng}\label{tbl:nicetablelesstable}
+\end{center}
+% ____
+
+
+
+
+
+% Test
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Xem danh sách tour.}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-2\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Là người dùng, tôi muốn vào ứng dụng để xem danh sách các tour của Happy-Tour.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng\end{tabular}  \\[0.3cm] \hline 
+    
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    \begin{itemize}
+    \item Thiết bị của người dùng đã được kết nối internet khi thực hiện đăng nhập
+    \item Người dùng truy cập website
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Người dùng xem được danh sách tour.
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{enumerate}
+        \item Người dùng truy cập vào website.
+        \item Người dùng duyệt danh sách tour có trên trang.\end{enumerate}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Hiện không có tour nào trên hệ thống.
+    \item Người quản lý đang cập nhật lại danh sách tour.
+    \end{itemize}
+
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+   
+    \begin{itemize}
+    \item  Các tour được nhiều người chọn và đem lại doanh thu sẽ ở trên cùng.
+    % \item     Các tour đem lại nhiều lợi nhuận hơn phải làm nổi bật bắt mắt.
+    \end{itemize}
+
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Xem danh sách tour}\label{tbl:nicetablelesstable}
+\end{center}
+% ----
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Đặt vé.}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-3\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Người dùng muốn đặt chổ tham gia tour du lịch.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng, Nhân viên bán tour.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    \begin{itemize}
+    \item Tài khoản người dùng đã được tạo sẵn
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Khách hàng nhấn vào nút đặt vé tour du lịch.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    \begin{itemize}
+    \item Người dùng được thông báo đã đặt vé thành công trên website
+    \item Hệ thống ghi nhận hoạt động
+    \item Khách hàng nhận được mail thông báo chi tiết
+    \end{itemize}
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{enumerate}
+        \item Người dụng chọn tour du lịch mình mong muốn trên web 
+        \item Người dùng vào giỏ hàng trên cùng bên phải
+        \item Người dùng nhập thông tin thẻ tín dụng và chọn "Thanh Toán"
+        \item Người dùng xác nhận lại thông tin trên màn hình và kiểm tra mail gửi tới
+        \end{enumerate}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Lỗi từ hệ thống
+    \item Thông tin thẻ tín dụng sai
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    Hỗ trợ nhiều loại thẻ tín dụng.
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Đặt vé}\label{tbl:nicetablelesstable}
+\end{center}
+% ---
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Hủy vé.}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-4\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Người dùng muốn hủy đặt chổ tham gia tour du lịch.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng, Nhân viên bán tour.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    \begin{itemize}
+    \item Tài khoản người dùng đã được tạo sẵn
+    \item Tài khoản người dùng đã được phân quyền
+    \item Tour du lịch ở trạng thái đã thanh toán chưa tiến hành.
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Khách hàng nhấn vào nút hủy đặt vé tour du lịch trong danh sách tour đã đặt.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    \begin{itemize}
+    \item Người dùng được thông báo hủy vé thành công trên website
+    \item Hệ thống ghi nhận hoạt động
+    \item Khách hàng nhận được mail thông báo chi tiết
+    \end{itemize}
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{enumerate}
+        \item Người dùng vào profile cá nhân 
+        \item Người dùng vào mục " MyBooking" bên trái
+        \item Người dùng chọn tour muốn hủy
+        \item Người dùng chọn "Accept"
+        \end{enumerate}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Còn 2 tuần tour bắt đầu
+    \item Tour đã bị hủy trước đó
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    % Cho phép khách hàng chuyển tiền thanh toán sang tour khách.
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Hủy vé}\label{tbl:nicetablelesstable}
+\end{center}
+
+% ---
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Quản lí thông tin cá nhân.}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-5\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Khách hàng có nhu cầu cập nhật thông tin cá nhân
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng, Các quản lí, Admin.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    \begin{itemize}
+    \item Tài khoản người dùng đã được tạo sẵn
+    \item Tài khoản người dùng đã được phân quyền
+    \item Thông tin đã được tải lên
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Người dùng chọn vào tên mình trên cùng trang web .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    \begin{itemize}
+    \item Người dùng truy cập được thông tin cá nhân
+    \item Hệ thống ghi nhận sửa đổi (nếu có)
+    \item Người dùng nhận được mail thông báo cập nhật.
+    \end{itemize}
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{enumerate}
+        \item Người dùng đăng nhập vào hệ thống 
+        \item Người dùng nhấn vào tên và avatar trên cùng trang web
+        \item Người dùng xem thông tin
+        \item Người dùng cập nhật thông tin(nếu có):Tên, mật khẩu , Ảnh đại diện, địa chỉ, thông tin thẻ,...
+        \end{enumerate}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Đăng nhập không thành công
+    \item Không có quyền truy cập
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    Tất cả thông tin phải được bảo mật.
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Quản lí thông tin}\label{tbl:nicetablelesstable}
+\end{center}
+% ---
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Xem danh sách tour đã đặt.}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-6\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Người dùng duyệt xem danh sách tour đã đặt.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    \begin{itemize}
+    \item Tài khoản người dùng đã được phân quyền
+    \item Khách hàng đã đặt tour trước đó
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Người dùng nhấn vào "MyBooking" trong profile.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Hiển thị các tour Khách hàng đã thanh toán
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \textbf{Khách hàng}
+        \begin{itemize}
+        \item Khách hàng truy cập được thông tin cá nhân
+        \item Khách hàng chọn "MyBooking"
+        \end{itemize}
+        % \textbf{Nhân viên chăm sóc, Nhân viên bán vé, Admin}
+        % \begin{itemize}
+        % \item NV truy cập vào thông tin khách hàng
+        % \item Chọn "My tour"
+        % \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Khách hàng không có tour đã đặt
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    % Chương trình khuyến mãi dựa trên sở thich đặt tour trước đó của khách hàng.
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Xem danh sách tour đã đặt}\label{tbl:nicetablelesstable}
+\end{center}
+
+% ---
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Lấy danh sách khách hàng tham gia tour}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-7\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Các cấp quản lí lấy danh sách khách hàng tham gia tour.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Hướng dẫn viên, Nhân viên bán tour, Admin.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    \begin{itemize}
+    \item Tài khoản người dùng đã được phân quyền
+    \item Có hành khách tham gia tour
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Người dùng muốn xem thông tin khách đã đặt tour.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Hiển thị các khách hàng đã đặt tour
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{itemize}
+        \item Người dùng đăng nhập vào hệ thống nội bộ
+        \item Người dùng chọn "tour list (available)"\end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Không có quyền truy cập
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    % Xác nhận tham gia chuyến đi
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Lấy danh sách khách hàng tham gia tour}\label{tbl:nicetablelesstable}
+\end{center}
+% ---
+
+% \begin{center}
+%     \begin{tabular}{|ll|}
+%     \hline
+%     \multicolumn{2}{|l|}{\centerline{\textbf{Kiêm tra tình trạng tour}}} \\[0.5cm] \hline
+%     \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-8\end{tabular}  \\[0.3cm] \hline 
+%     \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Các cấp quản lí muốn kiểm tra tình trạng khách hàng tham gia tour.
+%     \end{tabular}\\[0.5cm] \hline
+%     \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Quản lí tour nội địa(quốc tế), nhân viên chăm sóc khách hàng, Admin.\end{tabular}  \\[0.3cm] \hline 
+%     \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+% }} & \begin{tabular}{p{12cm}} 
+
+%     \begin{itemize}
+%     \item Tài khoản người dùng đã được phân quyền
+%     \item Có hành khách tham gia tour
+%     \end{itemize}
+%     \end{tabular} \\[0.5cm] \hline
+
+%     \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Kiểm tra lần cuối trước khi tiến hành tour du lịch.\end{tabular} \\[0.5cm] \hline
+    
+%     \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+% }} & \begin{tabular}{p{12cm}} 
+%     Hiển thị thông tin khách hàng đã đặt tour: Tình trạng xác nhận tham gia, visa, tình trạng tiêm chuẩn, tình trạng sức khỏe, thanh toán,.. của khách hàng.
+%     .\end{tabular} \\[0.5cm] \hline
+    
+%     \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+%         \begin{itemize}
+%         \item Người dùng vào "profile"
+%         \item Người dùng chọn "All tour"
+%         \item Người dùng chọn thẻ tour muốn kiểm tra
+%         \end{itemize}
+%     \end{tabular}\\[0.5cm] \hline
+ 
+%     \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    
+%     \begin{itemize}
+%     \item Không có quyền truy cập
+%     \item Không có khách hàng tham gia tour
+%     \item Tour đã được tiến hành
+%     \end{itemize}
+%     \end{tabular} \\[0.5cm] \hline
+    
+%     \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+%     Thay vị trí trống nếu có khách hàng cancel.
+%     \end{tabular}  \\[0.5cm] \hline
+    
+%     \end{tabular}
+%     \captionof{table}{Kiêm tra tình trạng tour}\label{tbl:nicetablelesstable}
+% \end{center}
+
+% ---
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Kết nối nhân viên chắm sóc khách hàng với khách}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-9\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Khách hàng cần tư vấn hỏi đáp bằng cách chat với nhân viên chăm sóc qua website.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Khách hàng, Nhân viên chắm sóc khách hàng.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    \begin{itemize}
+    \item Tài khoản người dùng đã được phân quyền
+    \item Có khách hàng liên hệ
+    \end{itemize}
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Khách hàng muốn liên lạc với nhân viên chắm sóc khách hàng.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    khách hàng và nhân viên chăm sóc kết nối thành công với nhau .
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \textbf{Khách hàng}
+        \begin{itemize}
+        \item Khách hàng vào website
+        \item Khách hàng chọn vào biểu tượng CSKH
+        \item Khách hàng nhập tin nhắn trong ô chat và gửi đi
+        \end{itemize}
+        \textbf{Nhân viên chăm sóc khách hàng}
+        \begin{itemize}
+        \item Nhân viên vào website
+        \item Nhân viên nhận được thông báo
+        \item Kiểm tra tin nhắn hiển thị và trả lời khách hàng
+        \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    Không có Nhân viên CSKH nào
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    Thời gian hồi đáp nhanh
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Kết nối nhân viên chắm sóc khách hàng với khách}\label{tbl:nicetablelesstable}
+\end{center}
+
+% ---
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Tour nội địa}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-10\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Quản lý cập nhật tour nội địa.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Quản lý tour nội địa, Admin.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    Tài khoản người dùng đã được phân quyền
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Quản lý chọn cập nhật tour du lịch nội địa.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Tour du lịch nội địa được cập nhật thành công trên hệ thống.
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{itemize}
+        \item Quản lý đăng nhập vào website hệ thống
+        \item Quản lý vào "Domestic tour" để truy cập danh sách.
+        \item Quản lý thêm xóa sửa tour nội địa
+        \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    Nhân viên không phải quản lí của tour
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    Tour du lịch được cập nhật thường xuyên
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Tour nội địa}\label{tbl:nicetablelesstable}
+\end{center}
+
+% ---
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Tour quốc tế}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-11\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Quản lý cập nhật tour quốc tế.
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Quản lý tour quốc tế, Admin.\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    Tài khoản người dùng đã được phân quyền
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Quản lý chọn cập nhật tour du lịch quốc tế.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Tour du lịch nội địa được cập nhật thành công trên hệ thống.
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{itemize}
+        \item Quản lý đăng nhập vào website hệ thống
+        \item Quản lý vào "International tour" để truy cập danh sách.
+        \item Quản lý thêm xóa sửa tour nội địa
+        \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    Nhân viên không phải quản lí của tour
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    Tour du lịch được cập nhật thường xuyên
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Tour quốc tế}\label{tbl:nicetablelesstable}
+\end{center}
+% ---
+
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Thống kê dữ liệu}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-12\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Kế toán viên kiểm ra thống kê dữ liệu về tour và khách hàng. Ví dụ: tổng số tiền, tình trạng chi trả của Khách hàng....
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Kế toán\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    Tài khoản người dùng đã được phân quyền
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Kế toán muốn xem dữ liệu của công ty.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Hiểu thị thống kê doanh số, tình trạng nhân viên,tình trạng kinh doanh,....
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{itemize}
+        \item Kế toán đăng nhập vào website hệ thống
+        \item Kế toán vào “Data statistics”" để truy cập danh sách.
+        \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    % Tour du lịch chưa hoàn thành
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Business Rules}} &
+neNguyenenee    Cập nhật phải được thông báo và xác nhận bởi admin
+    \begin{tabular}{p{12cm}} 
+    
+    \end{tabular} \\[0.5cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Thông báo nếu tình trạng kinh doanh có vấn đề
+    \item     Có thể xuât báo cáo
+    \end{itemize}
+
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Thống kê dữ liệu}\label{tbl:nicetablelesstable}
+\end{center}
+% ---
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{Tính lương}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-13\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Kế toán viên thống kê dữ liệu và xuất bảng lương
+(Do có phần mềm thứ 3 hỗ trợ điểm danh tích hợp số liệu vào trang hệ thống)
+
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Kế toán\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    Tài khoản người dùng đã được phân quyền
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Kế toán tính tiền trả lương cho nhân viên đầu tháng.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    Hiểu thị thống kê doanh số, tình trạng nhân viên,tình trạng kinh doanh, tình trạng điểm danh của nhân viên, lỗi vi phạm,...
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{itemize}
+        \item Kế toán viên đăng nhập vào website
+        \item Kế toán viên nhấn vào “Attendance” để truy cập vào danh sách
+        \item Kế toán lựa chọn nhấn xuất báo cáo và tính lương
+        \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} & \begin{tabular}{p{12cm}} 
+    Chưa vào những ngày cuối tháng
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Thông báo nếu tình trạng kinh doanh có vấn đề
+    \item     Có thể xuât báo cáo
+    \item Có thể gửi cho admin
+    \end{itemize}
+
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Thống kê dữ liệu}\label{tbl:nicetablelesstable}
+\end{center}
+
+% ---
+\begin{center}
+    \begin{tabular}{|ll|}
+    \hline
+    \multicolumn{2}{|l|}{\centerline{\textbf{ Quản lí user}}} \\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Use Case ID}} & \begin{tabular}{p{10cm}} UC-14\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Description}} &  \begin{tabular}{p{12cm}} Admin tạo và phân quyền cho các user
+    \end{tabular}\\[0.5cm] \hline
+    \multicolumn{1}{|l|}{\textbf{Actor}} & \begin{tabular}{p{12cm}} Admin\end{tabular}  \\[0.3cm] \hline 
+    \multicolumn{1}{|l|}{\textbf{Pre-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+
+    % Tài khoản người dùng đã được phân quyền
+    \end{tabular} \\[0.5cm] \hline
+
+    \multicolumn{1}{|l|}{\textbf{Trigger}} & \begin{tabular}{p{12cm}} Khi cập nhật danh sách nhân viên.\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Post-Condition(s):	
+}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+    \item Hệ thống cập nhật danh sách nhân viên
+    \item     Tài khoản được phân quyền đầy đủ
+    \end{itemize}
+
+    .\end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Basic Flow	}} &  \begin{tabular}{p{12cm}} 
+        \begin{itemize}
+        \item Admin đăng nhập vào website hê thống
+        \item Admin nhấn vào "User information"
+        \item Admin nhấn create/update user
+        \item Admin chọn phân quyền user
+        \end{itemize}
+    \end{tabular}\\[0.5cm] \hline
+ 
+    \multicolumn{1}{|l|}{\textbf{Exception Flow	}} &
+    \begin{tabular}{p{12cm}} 
+    Chưa nhập đủ thông tin yêu cầu không cho tạo user mới
+    \end{tabular} \\[0.5cm] \hline
+    
+    \multicolumn{1}{|l|}{\textbf{Non-Functional}} & \begin{tabular}{p{12cm}} 
+    
+    \begin{itemize}
+
+    \end{itemize}
+
+    \end{tabular}  \\[0.5cm] \hline
+    
+    \end{tabular}
+    \captionof{table}{Phân quyền và quản lí user}\label{tbl:nicetablelesstable}
+\end{center}
+
+\vspace{10cm}
+
+\addcontentsline{lot}{table}{Yêu cầu phi chức năng}
+
+\subsubsection{Yêu cầu phi chức năng}
+
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Loại yêu cầu & Định nghĩa & Ví dụ \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Môi trường kĩ thuật\end{tabular} & \begin{tabular}{p{6cm}}Yêu cầu có đầy đủ thiết bị phần cứng, phần mềm và mạng để phục vụ \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+\item Hệ thống triển khai trên nền tảng web 
+\item  Các văn phòng ở các địa điểm khác (mở rộng nếu có) phải luôn kết nối mạng để có thể cập nhật dữ liệu
+\end{itemize}
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu tích hợp hệ thống\end{tabular} & \begin{tabular}{p{6cm}}Yêu cầu tích hợp phần mềm khách nếu phù hợp \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+\item Tích hợp với excel để phân tích báo cáo 
+\item  Tích hợp thanh toán bên thứ 3
+\end{itemize}
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu về khả năng bảo trì\end{tabular} & \begin{tabular}{p{6cm}}Những thay đổi dự kiến mà hệ thống sẽ có thể thích ứng \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+\item Hệ thống sẽ được bảo trì định kỳ 6 tháng 1 lần
+\item  Phiên bản mới (nếu có) sẽ được ra mắt 6 tháng 1 lần
+\end{itemize}
+ \end{tabular} \\ \hline
+ 
+ \hline
+\end{tabular}
+\captionof{table}{Yêu cầu phi chức năng}\label{tbl:nicetablelesstable}
+\end{center}
+\vspace{10cm}
+
+\subsubsection{Yêu cầu hiệu năng}
+
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Loại yêu cầu & Định nghĩa & Ví dụ \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu về hiệu năng, tốc độ\end{tabular} & \begin{tabular}{p{6cm}}Thời gian tối đa mà hệ thống phải thực hiện các chức năng của nó \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+\item Thời gian phản hồi phải dưới 8 giây
+\item Database phải được update theo thời gian thực
+
+\end{itemize}
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu  cầu về sức chức\end{tabular} & \begin{tabular}{p{6cm}}Tổng con số đạt đỉnh về user và dữ liệu kỳ vọng \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+\item Tổng số lượng user truy cập cùng lúc cao nhất khoảng 300 người
+\item 5k dữ liệu là  con số cao nhất được thực hiện trong cùng thời gian
+
+\end{itemize}
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu về tính khả dụng\end{tabular} & \begin{tabular}{p{6cm}}Mức độ mà hệ thống hoạt động và tỷ lệ hỏng hóc cho phép do lỗi \end{tabular} &\begin{tabular}{p{7cm}} 
+Hệ thống được hoạt động 24/7 ngoại trừ lịch bảo trì hay cập nhật sẽ được thông báo trước
+ \end{tabular} \\ \hline
+ 
+ \hline
+\end{tabular}
+\captionof{table}{Yêu cầu về hiệu năng}\label{tbl:nicetablelesstable}
+\end{center}
+
+\vspace{10cm}
+
+
+\subsubsection{Yêu cầu về bảo mật}
+
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Loại yêu cầu & Định nghĩa & Ví dụ \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Ước tính giá trị hệ thống\end{tabular} & \begin{tabular}{p{6cm}}Ước tính giá trị tổn về dữ liệu và hệ thống \end{tabular} &\begin{tabular}{p{7cm}} 
+Nếu có lỗi ngoài ý muốn hay hệ thống bị tê liệt sẽ thiệt hại đến 20K mỗi giờ
+
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu kiểm soát truy cậpc\end{tabular} & \begin{tabular}{p{6cm}}Giới hạn chức năng của các user \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+
+\item Chỉ có các nhân viên và quản lí mới có thể truy cập và cập nhật được dữ liệu nội bộ
+\item Khách hàng chỉ có thể cập nhật thông tin của mình và thực hiện chức năng chat và tiến trình đặt vé
+
+
+\end{itemize}
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu về mã hóa và xác thực\end{tabular} & \begin{tabular}{p{6cm}}Xác định các dữ liệu cần mã hóa và xác thực quyền truy cập của user \end{tabular} &\begin{tabular}{p{7cm}} 
+Mã hóa các dữ liệu nhạy cảm
+ \end{tabular} \\ \hline
+ 
+  \begin{tabular}{p{1.5cm}}Yêu cầu về kiểm soát  virus\end{tabular} & \begin{tabular}{p{6cm}}Kiểm soát và loại bỏ virus \end{tabular} &\begin{tabular}{p{7cm}} 
+Tất cả các file bên khách hàng và nội bộ đều được kiểm tra trước khi lưu vào hệ thống
+ \end{tabular} \\ \hline
+ 
+ \hline
+\end{tabular}
+\captionof{table}{Yêu cầu về bảo mật}\label{tbl:nicetablelesstable}
+\end{center}
+
+\vspace{10cm}
+
+\subsubsection{Yêu cầu về văn hóa và chính trị}
+
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ Loại yêu cầu & Định nghĩa & Ví dụ \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu về đa ngôn ngữ\end{tabular} & \begin{tabular}{p{6cm}}Mở loại đa ngôn ngữ trên hệ thống \end{tabular} &\begin{tabular}{p{7cm}} 
+Hệ thống cần phải có thêm các ngôn ngữ phổ biến hiện nay (Tiếng Anh, Pháp,…)
+
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu tùy chỉnh\end{tabular} & \begin{tabular}{p{6cm}}Hệ thống tự động thay đổi các thông tin cần thiết phù hợp với từng đất nước của khách hàng \end{tabular} &\begin{tabular}{p{7cm}} 
+Hệ thống tự động cập nhật ngày giờ chuyến đi theo từng quốc gia và ngôn ngữ
+ \end{tabular} \\ \hline
+ 
+ \begin{tabular}{p{1.5cm}}Yêu cầu về các đơn vị thông tin\end{tabular} & \begin{tabular}{p{6cm}}Xác định sử dụng một loại đơn vị nhất định \end{tabular} &\begin{tabular}{p{7cm}} 
+
+
+
+\begin{itemize}
+
+\item Tất cả các ngày tháng năm đều định dạng theo MM-DD-YY
+\item Loại tiền tệ sử dụng là $ (dollar)
+
+\end{itemize}
+
+ \end{tabular} \\ \hline
+ 
+  \begin{tabular}{p{1.5cm}}Yêu cầu về thông tin hợp pháp\end{tabular} & \begin{tabular}{p{6cm}}Các thông tin dữ liệu trên hệ thống phải phù hợp với sự cho phép của chính trị \end{tabular} &\begin{tabular}{p{7cm}} 
+\begin{itemize}
+\item Sử dụng hình ảnh và từ ngữ phù hợp
+\item Cam kết bảo mật dữ liệu khách hàng
+\end{itemize}
+
+
+ \end{tabular} \\ \hline
+ 
+ \hline
+\end{tabular}
+\captionof{table}{Yêu cầu về văn hóa chính trị}\label{tbl:nicetablelesstable}
+\end{center}
+
+\vspace{15cm}

@@ -1,0 +1,174 @@
+
+%--------------- Personalize your document here ---------------
+
+\author{Ths.Dương Hữu Phúc} % Enter your name
+\newcommand{\studentID}{Student ID} % enter your student ID
+\newcommand{\supervisorone}{Nguyễn Thành Khang - 518H0372} % Enter your supervisor's name
+\newcommand{\supervisortwo}{Ngô Văn Quang Trường - 518H0073}% Leave it empty or enter your second supervisor's name 
+\newcommand{\department}{Phát triển hệ thống thông tin doanh nghiệp}
+\newcommand{\exam}{HAPPY TOUR}
+\newcommand{\K}{Khóa:K22}
+
+\date{Tp.Hồ Chí Minh, 2021} % insert a specific date	
+
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=30mm,top=30mm,right=30mm,bottom=30mm]{geometry}
+\usepackage{etoolbox} %required for cover page
+\usepackage{booktabs}
+\usepackage[usestackEOL]{stackengine}
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese,english]{babel}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+\usepackage{tikz}
+
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+\usepackage{enumitem,kantlipsum}
+\usepackage{amssymb}
+\usepackage[square,numbers,sort]{natbib}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{listings}
+\usepackage{minted}
+\usemintedstyle{emacs}
+
+\renewcommand{\listingscaption}{Algorithm}
+\renewcommand{\listoflistingscaption}{List of Algorithms}
+
+
+\bibliographystyle{unsrtnat}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+
+
+\linespread{1}
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\arabic{subsection}}
+\renewcommand\thesubsubsection{\alph{subsubsection}}
+\newtheorem{theorem}{Theorem}[section]
+
+\graphicspath{{figures/}}	
+
+%----------------------------------TITLE PAGE -----------------------------------
+\makeatletter
+\def\maketitle{
+  \begin{center}\leavevmode
+       \normalfont
+        \textsc{TỔNG LIÊN ĐOÀN LAO ĐỘNG VIỆT NAM }\\[0.2cm]
+        \newline
+        \textbf{TRƯỜNG ĐẠI HỌC TÔN ĐỨC THẮNG  }\\[0cm]
+        \newline
+        \textbf{KHOA CÔNG NGHỆ THÔNG TIN }\\[0cm] 
+       \includegraphics[width=0.35\columnwidth]{tdt-logo.pdf}
+       \vskip 0cm   
+       \textbf{\huge \department }
+       \vskip 1.5
+       \vspace{0.5cm}
+       \textbf{\large ĐỒ ÁN CUỐI KÌ }
+       \vskip 1.5
+       \vspace{1.5cm}
+
+       \textbf{\Huge \exam}\\[2cm]
+    %   \textbf{HAPPY-TOUR }\\[0cm]
+       \vspace{0cm}
+
+	 
+	\begin{minipage}[t]{1\textwidth}
+		\begin{flushright} \large
+% 			\emph{Instructor:\@author\\}\\
+		\end{flushright}
+	\end{minipage}
+	
+	\begin{minipage}[t]{1\textwidth}
+	    \begin{flushright} \large
+	        \emph{Người hướng dẫn:\@author\\}\\
+			\ifdefempty{\supervisortwo}{\emph{\\}}{\emph{Người thực hiện 1:\\}}
+			\supervisorone\\
+			
+			\ifdefempty{\supervisortwo}{\emph{\\}}{\emph{Người thực hiện 2:\\}}
+			\ifdefempty{\supervisortwo}{}{\supervisortwo\\}
+			\ Lớp : 18H50303 - 18H50204\\
+			\K\\
+			\vspace{1cm}
+		\end{flushright}
+	\end{minipage}
+	\vfill
+	{\Large \@date\par}
+   \end{center}
+   %\vfill
+   %\null
+  \cleardoublepage
+  }
+\makeatother
+
+
+%-------------------------------- ENDTITLE PAGE ----------------------------------
+
+\begin{document}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+
+\maketitle
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+%\listoffigures
+%\newpage
+%\listoftables
+%\newpage
+%\listofalgorithms % List of algorithms in pseudocode format
+%\newpage
+%\listoflistings % List of algorithms in code format
+%\newpage
+
+
+\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
+
+% This is how you can organize your document
+\input{sections/thankyou}
+\input{sections/commit}
+\input{sections/assessment}
+\input{sections/introduction}
+\input{sections/usercase}
+\input{sections/description}
+\input{sections/db-f-diagram}
+\input{sections/EER}
+\input{sections/realistic}
+\input{sections/database}
+\input{sections/sercurity}
+\input{sections/demo}
+\input{sections/References}
+
+
+
+
+%If you came here because you want your references in a new page, uncomment the following line
+
+%\clearpage % If you want the references in a separate page
+\bibliography{bibliography}
+
+
+\clearpage % If you want the appendix in a separate page
+\input{sections/appendix}
+
+\end{document}
