@@ -1,5 +1,5 @@
 
-![clipboard.png](inkdrop://file:DfVTDyIoL)
+![clipboard.png](AnhP/DfVTDyIoL-clipboard.png)
 # Welcome to **Happy Tour**
   
 Khi làn sóng đại dịch COVID-19 kết thúc, nhu cầu du lịch sẽ bùng nổ trên toàn thế
@@ -118,14 +118,19 @@ npm start
 ```
 npm run start:prod
 ```
+
+# 📈 Analyze ! 
+![clipboard.png](AnhP/ddp.png)
+
+![clipboard.png](AnhP/DFDsContext.png)
+
 # 📈 Demo! 
-![clipboard.png](inkdrop://file:UcaRnG6Nm)
-![clipboard.png](inkdrop://file:5TXPSA_bD)
-![clipboard.png](inkdrop://file:CQ3knGnol)
-![clipboard.png](inkdrop://file:eMvYsAj4q)
-![clipboard.png](inkdrop://file:R-UqHMiuh)
-![clipboard.png](inkdrop://file:guo2ttYze)
-![clipboard.png](inkdrop://file:UQql2sf00)
+
+![clipboard.png](AnhP/UcaRnG6Nm-clipboard.png)
+![clipboard2.png](AnhP/eMvYsAj4q-clipboard.png)
+![clipboard3.png](AnhP/guo2ttYze-clipboard.png)
+![clipboard4.png](AnhP/R-UqHMiuh-clipboard.png)
+![clipboard5.png](AnhP/UQql2sf00-clipboard.png)
 
 [Demo](https://khangnt-1.herokuapp.com/)
 
