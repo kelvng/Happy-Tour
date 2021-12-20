@@ -134,6 +134,10 @@ npm run start:prod
 
 [Demo](https://khangnt-1.herokuapp.com/)
 
+# 💬 View Project Report!
+
+[Report](Report/Report.pdf)
+
 # 💬 We're here to help!
 
 [Thành Khang](nthanhkhang@outlook.com)
