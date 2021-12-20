@@ -1,0 +1,1161 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style source-path="global-text-editor-styles">.mde-cm-wrapper .CodeMirror {
+      font-size: 13px;
+      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+    .mde-preview pre code, .mde-preview code {
+      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    }</style><style source-path="global-preview-styles">.mde-preview {
+      font-size: 15px
+    }</style><style source-path="C:\Users\nguyn\AppData\Roaming\inkdrop\packages\admonition\styles\admonition.less" priority="0">.admonition {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+}
+.admonition > summary {
+  cursor: pointer;
+}
+.admonition > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-icon,
+.admonition-note > .custom-block-heading:before,
+.admonition-info > .custom-block-heading:before,
+.admonition-danger > .custom-block-heading:before,
+.admonition-warning > .custom-block-heading:before,
+.admonition-success > .custom-block-heading:before,
+.admonition-fail > .custom-block-heading:before,
+.admonition-question > .custom-block-heading:before,
+.admonition-abstract > .custom-block-heading:before,
+.admonition-example > .custom-block-heading:before {
+  position: absolute;
+  left: 1.2rem;
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  width: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: center;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.admonition-title,
+.admonition-note > .custom-block-heading,
+.admonition-info > .custom-block-heading,
+.admonition-danger > .custom-block-heading,
+.admonition-warning > .custom-block-heading,
+.admonition-success > .custom-block-heading,
+.admonition-fail > .custom-block-heading,
+.admonition-question > .custom-block-heading,
+.admonition-abstract > .custom-block-heading,
+.admonition-example > .custom-block-heading,
+.admonition-spoiler > .custom-block-heading {
+  margin: 0 -1.2rem;
+  padding: 0.8rem 1.2rem 0.8rem 4rem;
+  border-bottom: 0.1rem solid rgba(68, 138, 255, 0.1);
+  background-color: rgba(68, 138, 255, 0.1);
+  font-weight: 700;
+}
+.admonition-note {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #448aff;
+}
+.admonition-note > summary {
+  cursor: pointer;
+}
+.admonition-note > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-note > .custom-block-heading {
+  background-color: rgba(68, 138, 255, 0.1);
+}
+.admonition-note > .custom-block-heading:before {
+  color: #448aff;
+  content: "\f249";
+}
+.admonition-info {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #009688;
+}
+.admonition-info > summary {
+  cursor: pointer;
+}
+.admonition-info > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-info > .custom-block-heading {
+  background-color: rgba(0, 150, 136, 0.1);
+}
+.admonition-info > .custom-block-heading:before {
+  color: #009688;
+  content: "\f05a";
+}
+.admonition-danger {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #c2185b;
+}
+.admonition-danger > summary {
+  cursor: pointer;
+}
+.admonition-danger > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-danger > .custom-block-heading {
+  background-color: rgba(194, 24, 91, 0.1);
+}
+.admonition-danger > .custom-block-heading:before {
+  color: #c2185b;
+  content: "\f0e7";
+}
+.admonition-warning {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #ff9100;
+}
+.admonition-warning > summary {
+  cursor: pointer;
+}
+.admonition-warning > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-warning > .custom-block-heading {
+  background-color: rgba(255, 145, 0, 0.1);
+}
+.admonition-warning > .custom-block-heading:before {
+  color: #ff9100;
+  content: "\f071";
+}
+.admonition-success {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #00c853;
+}
+.admonition-success > summary {
+  cursor: pointer;
+}
+.admonition-success > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-success > .custom-block-heading {
+  background-color: rgba(0, 200, 83, 0.1);
+}
+.admonition-success > .custom-block-heading:before {
+  color: #00c853;
+  content: "\f00c";
+}
+.admonition-fail {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #d32f2f;
+}
+.admonition-fail > summary {
+  cursor: pointer;
+}
+.admonition-fail > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-fail > .custom-block-heading {
+  background-color: rgba(211, 47, 47, 0.1);
+}
+.admonition-fail > .custom-block-heading:before {
+  color: #d32f2f;
+  content: "\f00d";
+}
+.admonition-question {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #64dd17;
+}
+.admonition-question > summary {
+  cursor: pointer;
+}
+.admonition-question > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-question > .custom-block-heading {
+  background-color: rgba(100, 221, 23, 0.1);
+}
+.admonition-question > .custom-block-heading:before {
+  color: #64dd17;
+  content: "\f059";
+}
+.admonition-abstract {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #00b0ff;
+}
+.admonition-abstract > summary {
+  cursor: pointer;
+}
+.admonition-abstract > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-abstract > .custom-block-heading {
+  background-color: rgba(0, 176, 255, 0.1);
+}
+.admonition-abstract > .custom-block-heading:before {
+  color: #00b0ff;
+  content: "\f02d";
+}
+.admonition-example {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #651fff;
+}
+.admonition-example > summary {
+  cursor: pointer;
+}
+.admonition-example > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-example > .custom-block-heading {
+  background-color: rgba(101, 31, 255, 0.1);
+}
+.admonition-example > .custom-block-heading:before {
+  color: #651fff;
+  content: "\f0cb";
+}
+.admonition-spoiler {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  border-left: 0.4rem solid #448aff;
+  border-radius: 0.2rem;
+  overflow: auto;
+  border-left-color: #455a64;
+}
+.admonition-spoiler > summary {
+  cursor: pointer;
+}
+.admonition-spoiler > .custom-block-body {
+  margin: 1em 0;
+}
+.admonition-spoiler > .custom-block-heading {
+  padding-left: 1rem;
+  background-color: rgba(69, 90, 100, 0.1);
+}
+</style><style source-path="C:\Users\nguyn\AppData\Roaming\inkdrop\packages\mermaid\styles\mermaid.less" priority="0">.mermaid-diagram svg {
+  color: black;
+}
+body[class*="dark-ui"] .mermaid-diagram {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.3rem;
+}
+</style><style source-path="C:\Users\nguyn\AppData\Roaming\inkdrop\packages\spell-checker\styles\spell-checker.less" priority="0">.CodeMirror .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word):not(.cm-link) {
+  border-bottom: 1px dotted red;
+}
+</style><style source-path="E:\OneDrive - 5TB\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\export-print\styles\index.css" priority="0">@media print {
+  .mde-preview table {
+    overflow: hidden;
+    word-break: break-word;
+  }
+  .mde-preview pre > code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+</style><style source-path="E:\OneDrive - 5TB\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\import-markdown\styles\select-book-dialog.less" priority="0">.ui.modal.dialog-frame.import-markdown-select-notebook-dialog {
+  min-width: 600px;
+  width: 50vw !important;
+  min-height: 50vh;
+}
+.ui.modal.dialog-frame.import-markdown-select-notebook-dialog .actions {
+  text-align: left;
+}
+</style><style source-path="E:\OneDrive - 5TB\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\import-html\styles\select-book-dialog.less" priority="0">.ui.modal.dialog-frame.import-html-select-notebook-dialog {
+  min-width: 600px;
+  width: 50vw !important;
+  min-height: 50vh;
+}
+.ui.modal.dialog-frame.import-html-select-notebook-dialog .actions {
+  text-align: left;
+}
+</style><style source-path="E:\OneDrive - 5TB\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\github-preview\styles\github-markdown.css" context="inkdrop-preview" priority="1">@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+.mde-preview {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.mde-preview:before {
+  display: table;
+  content: "";
+}
+.mde-preview:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.mde-preview a {
+  background-color: transparent;
+}
+.mde-preview a:active,
+.mde-preview a:hover {
+  outline: 0;
+}
+.mde-preview strong {
+  font-weight: bold;
+  color: black;
+}
+.mde-preview em {
+  color: black;
+}
+.mde-preview h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.mde-preview img {
+  border: 0;
+}
+.mde-preview hr {
+  box-sizing: content-box;
+  height: 0;
+}
+.mde-preview pre {
+  overflow: auto;
+}
+.mde-preview code,
+.mde-preview kbd,
+.mde-preview pre {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  font-size: 1em;
+}
+.mde-preview input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.mde-preview html input[disabled] {
+  cursor: default;
+}
+.mde-preview input {
+  line-height: normal;
+}
+.mde-preview input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.mde-preview table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.mde-preview td,
+.mde-preview th {
+  padding: 0;
+}
+.mde-preview * {
+  box-sizing: border-box;
+}
+.mde-preview input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.mde-preview a {
+  color: #4078c0;
+  text-decoration: none;
+}
+.mde-preview a:hover,
+.mde-preview a:active {
+  text-decoration: underline;
+}
+.mde-preview hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.mde-preview hr:before {
+  display: table;
+  content: "";
+}
+.mde-preview hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.mde-preview h1,
+.mde-preview h2,
+.mde-preview h3,
+.mde-preview h4,
+.mde-preview h5,
+.mde-preview h6 {
+  margin-top: 0;
+  padding-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.mde-preview h1 {
+  font-size: 30px;
+}
+.mde-preview h2 {
+  font-size: 21px;
+}
+.mde-preview h3 {
+  font-size: 16px;
+}
+.mde-preview h4 {
+  font-size: 14px;
+}
+.mde-preview h5 {
+  font-size: 12px;
+}
+.mde-preview h6 {
+  font-size: 11px;
+}
+.mde-preview blockquote {
+  margin: 0;
+}
+.mde-preview ul,
+.mde-preview ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.mde-preview ol ol,
+.mde-preview ul ol {
+  list-style-type: lower-roman;
+}
+.mde-preview ul ul ol,
+.mde-preview ul ol ol,
+.mde-preview ol ul ol,
+.mde-preview ol ol ol {
+  list-style-type: lower-alpha;
+}
+.mde-preview dd {
+  margin-left: 0;
+}
+.mde-preview code {
+  font-size: 12px;
+}
+.mde-preview pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+.mde-preview .select::-ms-expand {
+  opacity: 0;
+}
+.mde-preview .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.mde-preview .octicon-link:before {
+  content: '\f05c';
+}
+.mde-preview .mde-preview > *:first-child {
+  margin-top: 0 !important;
+}
+.mde-preview .mde-preview > *:last-child {
+  margin-bottom: 0 !important;
+}
+.mde-preview a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+.mde-preview .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+.mde-preview .anchor:focus {
+  outline: none;
+}
+.mde-preview h1 .octicon-link,
+.mde-preview h2 .octicon-link,
+.mde-preview h3 .octicon-link,
+.mde-preview h4 .octicon-link,
+.mde-preview h5 .octicon-link,
+.mde-preview h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.mde-preview h1:hover .anchor,
+.mde-preview h2:hover .anchor,
+.mde-preview h3:hover .anchor,
+.mde-preview h4:hover .anchor,
+.mde-preview h5:hover .anchor,
+.mde-preview h6:hover .anchor {
+  text-decoration: none;
+}
+.mde-preview h1:hover .anchor .octicon-link,
+.mde-preview h2:hover .anchor .octicon-link,
+.mde-preview h3:hover .anchor .octicon-link,
+.mde-preview h4:hover .anchor .octicon-link,
+.mde-preview h5:hover .anchor .octicon-link,
+.mde-preview h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+.mde-preview h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.mde-preview h1 .anchor {
+  line-height: 1;
+}
+.mde-preview h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.mde-preview h2 .anchor {
+  line-height: 1;
+}
+.mde-preview h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.mde-preview h3 .anchor {
+  line-height: 1.2;
+}
+.mde-preview h4 {
+  font-size: 1.25em;
+}
+.mde-preview h4 .anchor {
+  line-height: 1.2;
+}
+.mde-preview h5 {
+  font-size: 1em;
+}
+.mde-preview h5 .anchor {
+  line-height: 1.1;
+}
+.mde-preview h6 {
+  font-size: 1em;
+  color: #777;
+}
+.mde-preview h6 .anchor {
+  line-height: 1.1;
+}
+.mde-preview p,
+.mde-preview blockquote,
+.mde-preview ul,
+.mde-preview ol,
+.mde-preview dl,
+.mde-preview table,
+.mde-preview pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.mde-preview hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.mde-preview ul,
+.mde-preview ol {
+  padding-left: 2em;
+}
+.mde-preview ul ul,
+.mde-preview ul ol,
+.mde-preview ol ol,
+.mde-preview ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.mde-preview li > p {
+  margin: 0;
+}
+.mde-preview dl {
+  padding: 0;
+}
+.mde-preview dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.mde-preview dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.mde-preview blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.mde-preview blockquote > :first-child {
+  margin-top: 0;
+}
+.mde-preview blockquote > :last-child {
+  margin-bottom: 0;
+}
+.mde-preview table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: keep-all;
+}
+.mde-preview table th {
+  font-weight: bold;
+}
+.mde-preview table th,
+.mde-preview table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.mde-preview table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.mde-preview table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.mde-preview img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+.mde-preview code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.mde-preview code:before,
+.mde-preview code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.mde-preview pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.mde-preview pre {
+  padding: 16px;
+  overflow: auto;
+  word-wrap: normal;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.mde-preview pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.mde-preview pre code:before,
+.mde-preview pre code:after {
+  content: normal;
+}
+.mde-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.mde-preview .cm-header {
+  color: blue;
+}
+.mde-preview .cm-quote {
+  color: #090;
+  font-style: italic;
+}
+.mde-preview .cm-negative {
+  color: #d44;
+}
+.mde-preview .cm-positive {
+  color: #292;
+}
+.mde-preview .cm-header,
+.mde-preview .cm-strong {
+  font-weight: bold;
+}
+.mde-preview .cm-em {
+  font-style: italic;
+}
+.mde-preview .cm-link {
+  text-decoration: underline;
+}
+.mde-preview .cm-strikethrough {
+  text-decoration: line-through;
+}
+.mde-preview .cm-keyword {
+  color: #333;
+  font-weight: bold;
+}
+.mde-preview .cm-atom {
+  color: #219;
+}
+.mde-preview .cm-number {
+  color: #164;
+}
+.mde-preview .cm-def {
+  color: #00f;
+}
+.mde-preview .cm-property {
+  color: #00c;
+}
+.mde-preview .cm-operator {
+  color: #708;
+}
+.mde-preview .cm-variable-2 {
+  color: #05a;
+}
+.mde-preview .cm-variable-3,
+.mde-preview .cm-s-default .cm-type {
+  color: #085;
+}
+.mde-preview .cm-comment {
+  color: #a50;
+  font-style: italic;
+}
+.mde-preview .cm-string {
+  color: #a11;
+}
+.mde-preview .cm-string-2 {
+  color: #f50;
+}
+.mde-preview .cm-meta {
+  color: #555;
+}
+.mde-preview .cm-qualifier {
+  color: #555;
+}
+.mde-preview .cm-builtin {
+  color: #30a;
+}
+.mde-preview .cm-bracket {
+  color: #997;
+}
+.mde-preview .cm-tag {
+  color: #170;
+}
+.mde-preview .cm-attribute {
+  color: #00c;
+}
+.mde-preview .cm-hr {
+  color: #999;
+}
+.mde-preview .cm-link {
+  color: #00c;
+}
+.mde-preview .cm-error {
+  color: #f00;
+}
+.mde-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.mde-preview .task-list-item {
+  list-style-type: none;
+}
+.mde-preview .task-list-item + .task-list-item {
+  margin-top: 0px;
+}
+.mde-preview .task-list-item input {
+  /* margin: 0 0.35em 0.25em -1.6em; */
+  vertical-align: middle;
+}
+.mde-preview :checked + .radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+@media print {
+  .mde-preview table {
+    overflow: hidden;
+    word-break: break-word;
+  }
+  .mde-preview pre > code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+</style><style source-path="E:\OneDrive - 5TB\Inkdrop-demo-5.4.1-Windows\resources\app.asar\node_modules\github-preview\styles\github-markdown-dark.css" context="inkdrop-preview" priority="1">body[class*="dark-ui"] .mde-preview {
+  color: rgba(255, 255, 255, 0.7);
+}
+body[class*="dark-ui"] .mde-preview a {
+  background-color: transparent;
+}
+body[class*="dark-ui"] .mde-preview img {
+  border: 0;
+}
+body[class*="dark-ui"] .mde-preview input {
+  color: inherit;
+}
+body[class*="dark-ui"] .mde-preview a {
+  color: #6987AF;
+}
+body[class*="dark-ui"] .mde-preview strong,
+body[class*="dark-ui"] .mde-preview em {
+  color: white;
+}
+body[class*="dark-ui"] .mde-preview h1,
+body[class*="dark-ui"] .mde-preview h2,
+body[class*="dark-ui"] .mde-preview h3,
+body[class*="dark-ui"] .mde-preview h4,
+body[class*="dark-ui"] .mde-preview h5,
+body[class*="dark-ui"] .mde-preview h6 {
+  color: rgba(255, 255, 255, 0.875);
+}
+body[class*="dark-ui"] .mde-preview h6 {
+  color: rgba(255, 255, 255, 0.625);
+}
+body[class*="dark-ui"] .mde-preview h1,
+body[class*="dark-ui"] .mde-preview h2 {
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+body[class*="dark-ui"] .mde-preview hr {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+body[class*="dark-ui"] .mde-preview blockquote {
+  color: rgba(255, 255, 255, 0.4);
+  border-left: 4px solid rgba(255, 255, 255, 0.1);
+}
+body[class*="dark-ui"] .mde-preview table th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+body[class*="dark-ui"] .mde-preview table th,
+body[class*="dark-ui"] .mde-preview table td {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+body[class*="dark-ui"] .mde-preview table tr {
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+body[class*="dark-ui"] .mde-preview table tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+body[class*="dark-ui"] .mde-preview img {
+  background-color: transparent;
+}
+body[class*="dark-ui"] .mde-preview .highlight pre,
+body[class*="dark-ui"] .mde-preview pre {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+body[class*="dark-ui"] .mde-preview .cm-header {
+  color: #ffcc66;
+}
+body[class*="dark-ui"] .mde-preview .cm-quote {
+  color: #969896;
+  font-style: italic;
+}
+body[class*="dark-ui"] .mde-preview .cm-negative {
+  color: #d44;
+}
+body[class*="dark-ui"] .mde-preview .cm-positive {
+  color: #292;
+}
+body[class*="dark-ui"] .mde-preview .cm-header,
+body[class*="dark-ui"] .mde-preview .cm-strong {
+  font-weight: bold;
+}
+body[class*="dark-ui"] .mde-preview .cm-em {
+  font-style: italic;
+}
+body[class*="dark-ui"] .mde-preview .cm-link {
+  text-decoration: underline;
+}
+body[class*="dark-ui"] .mde-preview .cm-strikethrough {
+  text-decoration: line-through;
+}
+body[class*="dark-ui"] .mde-preview .cm-keyword {
+  color: #cc99cc;
+  font-weight: normal;
+}
+body[class*="dark-ui"] .mde-preview .cm-atom {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-number {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-def {
+  color: #b5bd68;
+}
+body[class*="dark-ui"] .mde-preview .cm-property {
+  color: #b5bd68;
+}
+body[class*="dark-ui"] .mde-preview .cm-operator {
+  color: #cc99cc;
+}
+body[class*="dark-ui"] .mde-preview .cm-variable-2 {
+  color: #4A664A;
+}
+body[class*="dark-ui"] .mde-preview .cm-variable-3,
+body[class*="dark-ui"] .mde-preview .cm-type {
+  color: rgba(255, 255, 255, 0.8);
+}
+body[class*="dark-ui"] .mde-preview .cm-comment {
+  color: #969896;
+  font-style: italic;
+}
+body[class*="dark-ui"] .mde-preview .cm-string {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-string-2 {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-meta {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-qualifier {
+  color: #555;
+}
+body[class*="dark-ui"] .mde-preview .cm-builtin {
+  color: #8abeb7;
+}
+body[class*="dark-ui"] .mde-preview .cm-bracket {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-tag {
+  color: #a54543;
+}
+body[class*="dark-ui"] .mde-preview .cm-attribute {
+  color: #fda331;
+}
+body[class*="dark-ui"] .mde-preview .cm-hr {
+  color: #999;
+}
+body[class*="dark-ui"] .mde-preview .cm-link {
+  color: #f99157;
+}
+body[class*="dark-ui"] .mde-preview .cm-error {
+  color: #f00;
+}
+</style>
+  </head>
+  <body class="mde-preview">
+    <div><h1 id="" data-line="1" data-line-end="1"></h1>
+<p data-line="3" data-line-end="3"><img src="DfVTDyIoL-clipboard.png" alt="clipboard.png"></p>
+<h1 id="welcome-to-happy-tour" data-line="4" data-line-end="4">Welcome to <strong data-line="4" data-line-end="4">Happy Tour</strong></h1>
+<p data-line="6" data-line-end="13">Khi làn sóng đại dịch COVID-19 kết thúc, nhu cầu du lịch sẽ bùng nổ trên toàn thế
+giới trong đó có Việt Nam. Để đón đầu nhu cầu du lịch ngày càng cao và đảm bảo
+chất lượng dịch vụ, quản lý hiệu quả và tiếp cận khách hàng dễ dàng hơn, chúng
+tôi đã triển khai hệ thống quản lý và đặt tour du lịch - Happy Tour . Giúp
+khách hàng dễ dàng đặt vé trực tuyến và giúp chủ doanh nghiệp dễ dàng quản lý
+đội ngũ nhân viên và các tour du lịch. Từng bước tin học hóa mọi thông tin dữ liệu
+và quản lý và thay thế dần các công tác quản lý thủ công của cửa hàng sang trực
+tuyến. Qua đó đem lại nguồn doanh thu lớn hơn cho doanh nghiệp</p>
+<h1 id="-function" data-line="15" data-line-end="15">📝 Function</h1>
+<h3 id="đăng-nhập" data-line="17" data-line-end="17">Đăng nhập</h3>
+<ul class="contains-task-list" data-line="18" data-line-end="23">
+<li class="task-list-item" data-line="18" data-line-end="18"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Login</li>
+<li class="task-list-item" data-line="19" data-line-end="19"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Logout</li>
+<li class="task-list-item" data-line="20" data-line-end="20"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Create account</li>
+<li class="task-list-item" data-line="21" data-line-end="21"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Reset</li>
+<li class="task-list-item" data-line="22" data-line-end="22"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Fogot</li>
+<li class="task-list-item" data-line="23" data-line-end="23"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Verify email</li>
+</ul>
+<h3 id="khách-hàng" data-line="25" data-line-end="25">Khách Hàng</h3>
+<ul class="contains-task-list" data-line="26" data-line-end="35">
+<li class="task-list-item" data-line="26" data-line-end="26"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Booking</li>
+<li class="task-list-item" data-line="27" data-line-end="27"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Cancel</li>
+<li class="task-list-item" data-line="28" data-line-end="28"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Xem danh sách tour</li>
+<li class="task-list-item" data-line="29" data-line-end="29"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Thanh toán</li>
+<li class="task-list-item" data-line="30" data-line-end="30"><span class="ui checkbox"><input type="checkbox"><label></label></span> Hoàn trả tiền</li>
+<li class="task-list-item" data-line="31" data-line-end="31"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Review</li>
+<li class="task-list-item" data-line="32" data-line-end="32"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Xem danh sách tour đã đặt</li>
+<li class="task-list-item" data-line="33" data-line-end="33"><span class="ui checkbox"><input type="checkbox"><label></label></span> Gửi tin nhăn cho nhân viên</li>
+<li class="task-list-item" data-line="34" data-line-end="34"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Theo dõi lịch trình di chuyển</li>
+<li class="task-list-item" data-line="35" data-line-end="35"><span class="ui checkbox"><input type="checkbox"><label></label></span> Nhận email thông báo: tình trạng tour, khuyến mãi,...</li>
+</ul>
+<h3 id="nhân-viên-phụ-trách-thông-tin-tour-nội-địa" data-line="37" data-line-end="37">Nhân viên phụ trách thông tin tour nội địa</h3>
+<ul class="contains-task-list" data-line="39" data-line-end="42">
+<li class="task-list-item" data-line="39" data-line-end="39"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Thêm tour</li>
+<li class="task-list-item" data-line="40" data-line-end="40"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Xóa tour</li>
+<li class="task-list-item" data-line="41" data-line-end="41"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Sửa tour</li>
+<li class="task-list-item" data-line="42" data-line-end="42"><span class="ui checkbox"><input type="checkbox"><label></label></span> Chat với khách hàng</li>
+</ul>
+<h3 id="nhân-viên-phụ-trách-thông-tin-tour-quốc-tế" data-line="44" data-line-end="44">Nhân viên phụ trách thông tin tour quốc tế</h3>
+<ul class="contains-task-list" data-line="46" data-line-end="51">
+<li class="task-list-item" data-line="46" data-line-end="46"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Thêm tour</li>
+<li class="task-list-item" data-line="47" data-line-end="47"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Xóa tour</li>
+<li class="task-list-item" data-line="48" data-line-end="48"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Sửa tour</li>
+<li class="task-list-item" data-line="49" data-line-end="49"><span class="ui checkbox"><input type="checkbox"><label></label></span> Tình trạng Visa</li>
+<li class="task-list-item" data-line="50" data-line-end="50"><span class="ui checkbox"><input type="checkbox"><label></label></span> Tình trạng tiêm chủng</li>
+<li class="task-list-item" data-line="51" data-line-end="51"><span class="ui checkbox"><input type="checkbox"><label></label></span> Chat với khách hàng</li>
+</ul>
+<h3 id="hướng-dẫn-viên-du-lịch" data-line="53" data-line-end="53">Hướng dẫn viên du lịch</h3>
+<ul class="contains-task-list" data-line="55" data-line-end="58">
+<li class="task-list-item" data-line="55" data-line-end="55"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Xem tour mình hướng dẫn</li>
+<li class="task-list-item" data-line="56" data-line-end="56"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Lấy danh sách Khách hàng tham gia tour</li>
+<li class="task-list-item" data-line="57" data-line-end="57"><span class="ui checkbox"><input type="checkbox"><label></label></span> Chat với Khách hàng</li>
+<li class="task-list-item" data-line="58" data-line-end="58"><span class="ui checkbox"><input type="checkbox"><label></label></span> Báo cáo tình trạng tour</li>
+</ul>
+<h3 id="nhân-viên-chăm-sóc-khách-hàng" data-line="60" data-line-end="60">Nhân viên chăm sóc khách hàng</h3>
+<ul class="contains-task-list" data-line="62" data-line-end="65">
+<li class="task-list-item" data-line="62" data-line-end="62"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Booking</li>
+<li class="task-list-item" data-line="63" data-line-end="63"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Cancel</li>
+<li class="task-list-item" data-line="64" data-line-end="64"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Xem danh sách tour</li>
+<li class="task-list-item" data-line="65" data-line-end="65"><span class="ui checkbox"><input type="checkbox"><label></label></span> Chat với khách hàng</li>
+</ul>
+<h3 id="kế-toán" data-line="67" data-line-end="67">Kế toán</h3>
+<ul class="contains-task-list" data-line="70" data-line-end="72">
+<li class="task-list-item" data-line="70" data-line-end="70"><span class="ui checkbox"><input type="checkbox"><label></label></span> Thống kê dữ liệu về tour và khách hàng và tài chính theo tuần, tháng, năm</li>
+<li class="task-list-item" data-line="71" data-line-end="71"><span class="ui checkbox"><input type="checkbox"><label></label></span> Xuất báo cáo theo tuần, tháng, năm</li>
+<li class="task-list-item" data-line="72" data-line-end="72"><span class="ui checkbox"><input type="checkbox"><label></label></span> Tính lương dựa theo số liệu điểm danh của phần mềm thứ 3 tích hợp dữ liệu sẳn vào hệ thống</li>
+</ul>
+<h3 id="cửa-hàng-trưởng---admin" data-line="74" data-line-end="74">Cửa hàng trưởng - Admin</h3>
+<ul class="contains-task-list" data-line="76" data-line-end="77">
+<li class="task-list-item" data-line="76" data-line-end="76"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Tất cả các quyền của nhân viên khác</li>
+<li class="task-list-item" data-line="77" data-line-end="77"><span class="ui checkbox"><input type="checkbox" checked=""><label></label></span> Phân bổ quyền hạn nhân viên</li>
+</ul>
+<h1 id="-how-to-install" data-line="82" data-line-end="82">🚦 How to install</h1>
+<ol data-line="84" data-line-end="84">
+<li data-line="84" data-line-end="84">Cài đặt NodeJS</li>
+</ol>
+<p data-line="86" data-line-end="86">  <a href="https://nodejs.org/en/download/" data-line="86" data-line-end="86">Install NodeJS</a></p>
+<ol start="2" data-line="88" data-line-end="88">
+<li data-line="88" data-line-end="88">Cài đặt MongoDB</li>
+</ol>
+<p data-line="90" data-line-end="91">Ở file config.env thay đổi thông tin database
+<a href="https://docs.mongodb.com/" data-line="91" data-line-end="91">document</a></p>
+<pre data-line="93" data-line-end="96"><code>DATABASE=mongodb+srv://truongwfngo:&lt;PASSWORD&gt;@cluster0.lym5b.mongodb.net/HappyTour?
+JWT_SECRET=Ub3nappGV08yCdGVcB/Zrb8eTZUNBRyzYPWUvkprvbg
+</code></pre>
+<p data-line="98" data-line-end="98">Ở file config.env thay đổi thông tin email</p>
+<pre data-line="100" data-line-end="103"><code>EMAIL_USERNAME=domain@gmail.com
+EMAIL_PASSWORD=&lt;password&gt;
+</code></pre>
+<ol start="3" data-line="105" data-line-end="105">
+<li data-line="105" data-line-end="105">Cài đặt các gói npm hỗ trợ trong file package.json (dependencies)</li>
+</ol>
+<pre data-line="107" data-line-end="109"><code>npm install
+</code></pre>
+<ol start="4" data-line="111" data-line-end="111">
+<li data-line="111" data-line-end="111">Chạy project ở môi trường dev: </li>
+</ol>
+<pre data-line="113" data-line-end="115"><code>npm start
+</code></pre>
+<ol start="5" data-line="117" data-line-end="117">
+<li data-line="117" data-line-end="117">Chạy project ở môi trường product: </li>
+</ol>
+<pre data-line="119" data-line-end="121"><code>npm run start:prod
+</code></pre>
+<h1 id="-demo" data-line="122" data-line-end="122">📈 Demo!</h1>
+<p data-line="123" data-line-end="123"><img src="UcaRnG6Nm-clipboard.png" alt="clipboard.png"></p>
+<p data-line="125" data-line-end="129"><img src="CQ3knGnol-clipboard.png" alt="clipboard.png">
+<img src="eMvYsAj4q-clipboard.png" alt="clipboard.png">
+<img src="R-UqHMiuh-clipboard.png" alt="clipboard.png">
+<img src="guo2ttYze-clipboard.png" alt="clipboard.png">
+<img src="UQql2sf00-clipboard.png" alt="clipboard.png"></p>
+<p data-line="131" data-line-end="131"><a href="https://khangnt-1.herokuapp.com/" data-line="131" data-line-end="131">Demo</a></p>
+<h1 id="-were-here-to-help" data-line="133" data-line-end="133">💬 We're here to help!</h1>
+<p data-line="135" data-line-end="135"><a href="nthanhkhang@outlook.com" data-line="135" data-line-end="135">Thành Khang</a></p>
+<p data-line="137" data-line-end="137"><a href="truongwfngo@gmail.com" data-line="137" data-line-end="137">Quang Trường</a></p></div>
+  </body>
+</html>
